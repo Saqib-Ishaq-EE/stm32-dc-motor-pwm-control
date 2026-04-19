@@ -93,11 +93,14 @@ This project demonstrates real-time DC motor speed control using PWM (Pulse Widt
 
 ## 💻 Code Highlights
 
-* TIM2 PWM used for motor speed control
-* GPIO used for button interfacing
-* Duty cycle adjusted dynamically
-* Real-time control using embedded logic
+## Code Highlights
 
+- TIM2 PWM used to control DC motor speed
+- Push buttons read as digital inputs
+- ON/OFF button toggles motor state
+- Increase button raises PWM duty cycle step-by-step
+- Decrease button lowers PWM duty cycle step-by-step
+- Duty cycle updated in software for smooth control
 ---
 
 ## Project Outcome
