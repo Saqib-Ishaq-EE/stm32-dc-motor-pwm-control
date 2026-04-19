@@ -1,27 +1,28 @@
-# STM32-Based-DC-Motor-Control-System-using-PWM
-STM32-based DC motor speed control using PWM with push buttons for ON/OFF, speed increase, and speed decrease.
-# STM32 DC Motor Control using PWM
+# STM32 DC Motor PWM Control
 
 ## Overview
 
-This project demonstrates DC motor speed control using PWM (Pulse Width Modulation) with STM32F103C8T6 (Blue Pill). The system uses three push buttons to control motor ON/OFF and adjust speed.
+This project demonstrates real-time DC motor speed control using PWM (Pulse Width Modulation) with the STM32F103C8T6 (Blue Pill). The system allows the user to control motor ON/OFF and adjust speed using push buttons.
 
 ---
 
 ## Features
 
-* Motor ON/OFF using push button
-* Speed increase using button
-* Speed decrease using button
-* PWM-based efficient motor control
+*  Motor ON/OFF control using push button
+*  Speed increase using button
+*  Speed decrease using button
+*  Efficient PWM-based motor control
 
 ---
 
-## Working
+## Working Principle
 
-* Button 1 → Toggle motor ON/OFF
-* Button 2 → Increase speed (increase duty cycle +5%)
-* Button 3 → Decrease speed (decrease duty cycle -5%)
+* PWM signal controls motor speed by varying duty cycle
+* Three push buttons are used:
+
+  * Button 1 → Toggle motor ON/OFF
+  * Button 2 → Increase speed (increase duty cycle)
+  * Button 3 → Decrease speed (decrease duty cycle)
 
 ---
 
@@ -29,19 +30,32 @@ This project demonstrates DC motor speed control using PWM (Pulse Width Modulati
 
 * STM32F103C8T6 (Blue Pill)
 * DC Motor
-* Motor Driver (L298N)
-* 3 Push Buttons
+* Motor Driver (L298N / L293D)
+* Push Buttons (3x)
+* External Power Supply
 
 ---
 
 ## Pin Configuration
 
-| Component      | STM32 Pin |
-| -------------- | --------- |
-| PWM Output     | PA1       |
-| ON/OFF Button  | PB0       |
-| Speed Increase | PB1       |
-| Speed Decrease | PB10      |
+| Component      | STM32 Pin      |
+| -------------- | -------------- |
+| PWM Output     | PA1 (TIM2 CH2) |
+| ON/OFF Button  | PB0            |
+| Speed Increase | PB1            |
+| Speed Decrease | PB10           |
+
+---
+
+## Circuit Connections
+
+* STM32 PA1 → Motor driver PWM input ENB
+* STM32 PB0 → ON/OFF push button
+* STM32 PB1 → Speed increase button
+* STM32 PB10 → Speed decrease button
+* Motor driver output (OUT3 & OUT4) → DC motor
+* External power supply used for motor
+* STM32 powered via regulated supply
 
 ---
 
@@ -53,27 +67,68 @@ This project demonstrates DC motor speed control using PWM (Pulse Width Modulati
 
 ---
 
-## 📸 Demo
+## PWM Concept
 
-![Hardware Image 1](img5.jpg)
-![Hardware Image 2](img7.jpg)
-![Hardware Image 3](img13.jpg)
-![Hardware Image 4](img14.jpg)
+* Duty Cycle ↑ → Motor Speed ↑
+* Duty Cycle ↓ → Motor Speed ↓
 
-## 🎥 Demo Video
+---
 
-[Watch Motor Running Video](https://drive.google.com/file/d/1DBJ4HqE5uqFQ9R1SAauPwjifIZeeNPna/view?usp=sharing)
+##  Demo
+
+### Hardware Setup
+
+![Hardware Demo Image_1](img5.jpg)
+![Hardware Demo Image_2](img7.jpg)
+![Hardware Demo Image_3](img13.jpg)
+![Hardware Demo Image_4](img14.jpg)
+
+---
+
+## 🎥 Project Demonstration Video
+
+[Watch Motor Running Demo](https://drive.google.com/file/d/1DBJ4HqE5uqFQ9R1SAauPwjifIZeeNPna/view?usp=sharing)
+
+---
+
+## 💻 Code Highlights
+
+* TIM2 PWM used for motor speed control
+* GPIO used for button interfacing
+* Duty cycle adjusted dynamically
+* Real-time control using embedded logic
+
+---
+
+## 🏁 Project Outcome
+
+This project successfully demonstrates practical implementation of embedded motor control using STM32. It highlights PWM generation, hardware interfacing, and real-time user input handling.
 
 ---
 
 ## 🚀 Future Improvements
 
-* Add LCD display
-* Add Bluetooth (ESP32) control
+* Add LCD for speed display
 * Implement PID control
+* Add Bluetooth/WiFi control (ESP32)
+* Mobile app integration
 
 ---
 
-## Author
+## 🛠️ Skills Demonstrated
+
+* STM32 Embedded Programming
+* PWM Generation
+* Timer Configuration
+* GPIO Interfacing
+* Push Button Handling
+* DC Motor Control
+* Embedded C
+* STM32CubeMX
+* Keil uVision
+
+---
+
+## 👨‍💻 Author
 
 Saqib Ishaq – Electrical Engineering Student (PIEAS)
