@@ -93,8 +93,6 @@ This project demonstrates real-time DC motor speed control using PWM (Pulse Widt
 
 ## 💻 Code Highlights
 
-## Code Highlights
-
 - TIM2 PWM used to control DC motor speed
 - Push buttons read as digital inputs
 - ON/OFF button toggles motor state
@@ -103,6 +101,22 @@ This project demonstrates real-time DC motor speed control using PWM (Pulse Widt
 - Duty cycle updated in software for smooth control
 ---
 
+## Control Logic
+
+- Motor state is toggled using the ON/OFF button.
+- PWM duty cycle is increased in steps when the speed-up button is pressed.
+- PWM duty cycle is decreased in steps when the speed-down button is pressed.
+- The motor speed changes according to the applied PWM duty cycle.
+
+## How to Run
+
+1. Open the project in Keil uVision.
+2. Build the project.
+3. Flash the code to STM32F103C8T6 using ST-Link.
+4. Connect the motor driver, push buttons, and motor according to the pin configuration.
+5. Power the STM32 and motor driver.
+6. Use the buttons to turn the motor ON/OFF and adjust speed.
+   
 ## Project Outcome
 
 This project successfully demonstrates practical implementation of embedded motor control using STM32. It highlights PWM generation, hardware interfacing, and real-time user input handling.
